@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Metadata -->
+  <meta charset="utf-8">
+  <meta name="author" content="Michael Lam">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Interactive Slideshow - Michael Lam: ICS4U Portfolio</title>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/ICS4U-Portfolio/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/ICS4U-Portfolio/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/ICS4U-Portfolio/images/favicon/favicon-16x16.png">
+  <link rel="mask-icon" href="/ICS4U-Portfolio/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="/ICS4U-Portfolio/images/favicon/favicon.ico">
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="/ICS4U-Portfolio/style.css">
+  <!-- Project styles -->
+  <style>
+    p {
+      font-size: 2em;
+      margin-left: 16px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="module-header">
+    <a href="javascript:history.back()" aria-label="Return to all projects"><h2>< Return</h2></a>
+    <a href="javascript:window.location.reload()" aria-label="Reload project"><h2 class="reload">&#x21bb;</h2></a>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1 class="text-center">Interactive Slideshow</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col p-3">
+        <img src="https://www.kasandbox.org/programming-images/food/mushroom.png" width="400" alt="Mushrooms" id="shroomImg">
+        <img src="https://www.kasandbox.org/programming-images/animals/cat.png" width="400" alt="Cat" id="catImg">
+        <br>
+        <button type="button" id="nextBtn">Next →</button>
+        <button type="button" id="backBtn">← Previous</button>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+        <script>
+          $("#backBtn").hide();
+          $("#catImg").hide();
+          $("#shroomImg").hide();
+          $("#shroomImg").slideDown(450);
+          $("<p>").text("Mushrooms").addClass("shroomTxt").appendTo("body");
+
+          $("#nextBtn").on("click", function() {
+            $("#shroomImg").slideUp();
+            $(".shroomTxt").slideUp();
+            $("#catImg").fadeToggle(450);
+            $("<p>").text("A cat.").addClass("catTxt").appendTo("body");
+            $("#nextBtn").hide();
+            $("#backBtn").show();
+          });
+
+          $("#backBtn").on("click", function() {
+            $("#catImg").slideToggle(450);
+            $("#shroomImg").slideDown(450);
+            $(".shroomTxt").fadeIn(450);
+            $(".catTxt").hide();
+            $("#backBtn").hide();
+            $("#nextBtn").show();
+          });
+        </script>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

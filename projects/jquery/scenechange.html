@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Metadata -->
+  <meta charset="utf-8">
+  <meta name="author" content="Michael Lam">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scene Change - Michael Lam: ICS4U Portfolio</title>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/ICS4U-Portfolio/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/ICS4U-Portfolio/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/ICS4U-Portfolio/images/favicon/favicon-16x16.png">
+  <link rel="mask-icon" href="/ICS4U-Portfolio/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="/ICS4U-Portfolio/images/favicon/favicon.ico">
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="/ICS4U-Portfolio/style.css">
+  <!-- Project styles -->
+  <style>
+    #leafers {
+      position: absolute;
+      top: 210px;
+      left: 378px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="module-header">
+    <a href="javascript:history.back()" aria-label="Return to all projects"><h2>< Return</h2></a>
+    <a href="javascript:window.location.reload()" aria-label="Reload project"><h2 class="reload">&#x21bb;</h2></a>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1 class="text-center">Scene Change</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <img src="https://www.kasandbox.org/programming-images/landscapes/beach-with-palm-trees.png" id="background">
+  <img src="https://www.kasandbox.org/programming-images/avatars/leafers-seedling.png" id="leafers">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script>
+    $("#leafers").on("click", function(event) {
+      $("#leafers").attr({
+        src: "https://cdn.kastatic.org/images/avatars/svg/leafers-sapling.svg",
+        width: "125px"
+      });
+    });
+
+    var $sound = $("<audio preload = auto>");
+    $sound.attr("src", "https://www.kasandbox.org/programming-sounds/rpg/water-slosh.mp3");
+    $("body").on("click", function() {
+      $("body").append($sound);
+      $sound[0].play();
+    });
+
+    $("#background").on("click", function(event) {
+      $("#background").attr("src", "https://www.kasandbox.org/programming-images/animals/crocodiles.png")
+    });
+  </script>
+</body>
+
+</html>

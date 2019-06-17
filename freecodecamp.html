@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <!-- Metadata -->
+  <meta charset="utf-8">
+  <meta name="author" content="Michael Lam">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>freeCodeCamp - Michael Lam: ICS4U Portfolio</title>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/ICS4U-Portfolio/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/ICS4U-Portfolio/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/ICS4U-Portfolio/images/favicon/favicon-16x16.png">
+  <link rel="mask-icon" href="/ICS4U-Portfolio/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="/ICS4U-Portfolio/images/favicon/favicon.ico">
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="/ICS4U-Portfolio/style.css">
+</head>
+
+<body>
+  <div id="loadHeader"></div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col p-0">
+        <div class="hero">
+          <img src="/ICS4U-Portfolio/images/hero/freecodecamp.jpg" class="hero-img d-block w-100">
+          <h1 id="hero-text">freeCodeCamp</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col pt-3 pb-2">
+        <h1 class="text-center">Palindrome Checker</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <pre class="prettyprint">
+
+    var firstChar = function(str) {
+        return str.slice(0, 1);
+    };
+
+    var lastChar = function(str) {
+      return str.slice(-1);
+    };
+
+    var middleChar = function(str) {
+      return str.slice(1, -1);
+    };
+
+    function palindrome(str) {
+      let newStr = str.toLowerCase().replace(/[^a-z0-9+]+/gi, '');
+
+      if (newStr.length <= 1) {
+        return true;
+      }
+
+      if (firstChar(newStr) !== lastChar(newStr)) {
+        return false;
+      }
+
+      return palindrome(middleChar(newStr));
+    }
+
+    document.getElementById("truepalindrome").innerHTML += palindrome("eye");
+    document.getElementById("falsepalindrome").innerHTML += palindrome("This is not a palindrome and thus should return false.");
+        </pre>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <p>Note that the code above is run upon page load, and that the "true" and "false" text below are added by the code.</p>
+        <p id="truepalindrome"><code>palindrome("eye")</code> returns: </p>
+        <p id="falsepalindrome"><code>palindrome("This is not a palindrome and thus should return false.")</code> returns: </p>
+      </div>
+    </div>
+  </div>
+  <br>
+
+  <script>
+    var firstChar = function(str) { return str.slice(0, 1); };
+    var lastChar = function(str) { return str.slice(-1); };
+    var middleChar = function(str) { return str.slice(1, -1); };
+
+    function palindrome(str) {
+      let newStr = str.toLowerCase().replace(/[^a-z0-9+]+/gi, '');
+      if (newStr.length <= 1) {
+        return true;
+      }
+      if (firstChar(newStr) !== lastChar(newStr)) {
+        return false;
+      }
+      return palindrome(middleChar(newStr));
+    }
+
+    document.getElementById("truepalindrome").innerHTML += palindrome("eye");
+    document.getElementById("falsepalindrome").innerHTML += palindrome("This is not a palindrome and thus should return false.");
+  </script>
+
+  <script src="/ICS4U-Portfolio/script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+</body>
+
+</html>
