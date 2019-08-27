@@ -6,7 +6,7 @@ function load(url, element) {
   element.innerHTML = req.responseText;
 }
 
-load("/ICS4U-Portfolio/header.html", document.getElementById("loadHeader"));
+load("header.html", document.getElementById("loadHeader"));
 
 // Scrolls smoothly to anchor links
 function scrollTo(id) {
