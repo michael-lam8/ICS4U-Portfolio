@@ -110,8 +110,8 @@ a:hover {
 }
 
 .module-img {
-    border-top-left-radius: 2px;
-    width: 100%;
+  border-top-left-radius: 2px;
+  width: 100%;
 }
 
 /* Media query for mobile devices */
@@ -128,18 +128,27 @@ a:hover {
 
 /* Hides project header on smaller screen sizes due to WebKit rendering bug */
 @media (max-width: 1385px) {
-  .module-header h1 { font-size: 0px; }
+  .module-header h1 {
+    font-size: 0px;
+  }
 }
 
 /* Support for devices with notches */
 @supports(padding: max(0px)) {
-  #navBarTable { margin-right: max(10px, env(safe-area-inset-right)) }
-  .container { padding-bottom: env(safe-area-inset-bottom); }
+  #navBarTable {
+    margin-right: max(10px, env(safe-area-inset-right))
+  }
+
+  .container {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
 
   .col {
     padding-left: env(safe-area-inset-left);
     padding-right: env(safe-area-inset-right);
   }
 
-  .dropdown { padding-right: env(safe-area-inset-right); }
+  .dropdown {
+    padding-right: env(safe-area-inset-right);
+  }
 }
