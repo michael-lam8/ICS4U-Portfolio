@@ -22,14 +22,6 @@ a:hover {
   height: 70px;
 }
 
-.header img {
-  float: left;
-  margin-left: 10px;
-  margin-top: 5px;
-  height: 60px;
-  border-radius: 50%
-}
-
 .header h2, .module-header h2 {
   float: left;
   margin-left: 16px;
@@ -122,13 +114,6 @@ a:hover {
     width: 100%;
 }
 
-/* Media query for small mobile devices */
-@media (max-width: 374px) {
-  .header img {
-    display: none;
-  }
-}
-
 /* Media query for mobile devices */
 @media (max-width: 575px) {
   .module-item {
@@ -148,7 +133,6 @@ a:hover {
 
 /* Support for devices with notches */
 @supports(padding: max(0px)) {
-  .header img { margin-left: max(10px, env(safe-area-inset-left)); }
   #navBarTable { margin-right: max(10px, env(safe-area-inset-right)) }
   .container { padding-bottom: env(safe-area-inset-bottom); }
 
